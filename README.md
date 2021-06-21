@@ -1,3 +1,4 @@
+View Full documnet:https://github.com/Rakeshpandithts/Django_weather_appi_async_email/blob/main/Django_Restframework_login_logout.pdf
 # Features:
 1. Django rest login and logout
 2. Fetch external weather api data every 30 mins.
