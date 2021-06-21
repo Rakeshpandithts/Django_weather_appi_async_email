@@ -86,7 +86,7 @@ POST http://127.0.0.1:8000/api/logout
 Cookie is deleted from browser
 Output Success = {"message": "success"}
 
-Email Weather API 
+3. Email Weather API 
 I have created the cron.py in the django project folder here I have added the api call and emailing a csv to the recipient list.
 Flow is as follows:
 Call the  https://openweathermap.org/api using requests
@@ -96,7 +96,7 @@ Send the email with csv attachment to RECIPIENT_LIST
 Output:
 
 
-Get Weather Information API Pagination
+4. Get Weather Information API Pagination
 POST http://127.0.0.1:8000/api/weather
 Input {   "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjIzMDU0MDU3LCJpYXQiOjE2MjMwNTA0NTd9.uFY2I5PDw9thdVGENFvtOILs3Ts7BgVxYDeZIIayEHA"}
 Post the JWT token when calling this api, It will first authenticate the user and then give the data.
@@ -109,10 +109,7 @@ Now the page size is given as 5
 
 
 
-
-
-
-Sending email using api call without async task (I have added this process just for testing purpose)
+5. Sending email using api call without async task (I have added this process just for testing purpose)
 POST http://127.0.0.1:8000/api/email 
 Call the  https://openweathermap.org/api using requests
 Stores weather data in weatherData model
