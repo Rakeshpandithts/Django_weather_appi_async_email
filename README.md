@@ -1,5 +1,5 @@
 # Features:
-1. Django rest login
+1. Django rest login and logout
 2. Fetch external weather api data every 30 mins.
 3. store weather data in DB.
 4. Get paginated api data
@@ -26,32 +26,53 @@ tzlocal==2.1
 urllib3==1.26.5
 
 Install and Run
+
 Create a virtual environment where all the required python packages will be installed
+
 Activate the virtual environment
+
 Install all the project Requirements:  pip install -r requirements.txt
+
 In Django projects settings.py set your email host details:
+
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+
 EMAIL_HOST = 'smtp.gmail.com'
+
 EMAIL_USE_TLS = True
+
 EMAIL_PORT = 587
+
 EMAIL_HOST_USER = 'your@gmail.com'
+
 EMAIL_HOST_PASSWORD = ''
 
 In Django projects settings.py add recipient list:
 RECIPIENT_LIST = []
+
 Run the following commands to start scheduling task (Now set to 30 mins)
+
 Start
+
 python manage.py crontab add .
+
 Show current active jobs
+
 python manage.py crontab show
+
 Stop current active jobs
+
 python manage.py crontab remove
+
 Run the development server
+
 python manage.py runserver
 
 Testing:
-	For api testing I used Postman and I am adding those test screenshots here.
-Login API
+
+For api testing I used Postman and I am adding those test screenshots here.
+
+1. Login API
 Post http://127.0.0.1:8000/api/login
 Input credentials= {"email": "rakesh@gmail.com","password": "asdf"} 
 Use this user credentials: "email": "rakesh@gmail.com","password": "asdf"
@@ -60,7 +81,7 @@ Success = {    "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjox
 Password error = {   "detail": "Incorrect password!"}
 User not found = { "detail": "User not found!"}
 
-Logout API
+2. Logout API
 POST http://127.0.0.1:8000/api/logout
 Cookie is deleted from browser
 Output Success = {"message": "success"}
